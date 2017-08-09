@@ -6,11 +6,37 @@
         <link rel="stylesheet" href="/static/master.css">
     </head>
     <body>
-        <!-- flash message displayed here -->
-        <!-- email -->
-        <!-- first name -->
-        <!-- last name -->
-        <!-- password -->
-        <!-- repeat password -->
+        <form class="" action="/process" method="post">
+            <!-- flash message displayed here -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <br>
+            <!-- email -->
+            <label for="email">Email: </label>
+            <input type="text" name="email" value=""><br>
+
+            <!-- first name -->
+            <label for="first_name">First Name: </label>
+            <input type="text" name="first_name" value=""><br>
+
+            <!-- last name -->
+            <label for="last_name">Last Name: </label>
+            <input type="text" name="last_name" value=""><br>
+
+            <!-- password -->
+            <label for="password1">Password: </label>
+            <input type="password" name="password1" value=""><br>
+
+            <!-- repeat password -->
+            <label for="password2">Password: </label>
+            <input type="password" name="password2" value=""><br>
+
+            <button type="submit" name="submit"><h3>Submit</h3></button>
+        </form>
     </body>
 </html>
